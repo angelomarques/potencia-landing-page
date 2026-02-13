@@ -1,14 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Code2, Lightbulb, Package, Mail, Linkedin, Menu } from "lucide-react";
+import { Code2, Lightbulb, Linkedin, Mail, Menu, Package } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -51,23 +50,34 @@ export default function Page() {
       <main className="flex-1">
         {/* Hero */}
         <section className="container mx-auto px-4 py-16 md:py-24">
-          <div className="max-w-2xl">
-            <h1 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-              Software, consultoria e produtos que{" "}
-              <span className="text-primary">impulsionam</span> seu negócio
-            </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Somos uma empresa brasileira que oferece serviços de
-              desenvolvimento de software, consultoria em tecnologia e criação
-              de produtos digitais sob medida.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg">
-                <a href="#contato">Fale conosco</a>
-              </Button>
-              <Button asChild variant="outline" size="lg">
-                <a href="#servicos">Ver serviços</a>
-              </Button>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-16">
+            <div className="max-w-2xl">
+              <h1 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+                Software, consultoria e produtos que{" "}
+                <span className="text-primary">impulsionam</span> seu negócio
+              </h1>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Somos uma empresa brasileira que oferece serviços de
+                desenvolvimento de software, consultoria em tecnologia e criação
+                de produtos digitais sob medida.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button asChild size="lg">
+                  <a href="#contato">Fale conosco</a>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <a href="#servicos">Ver serviços</a>
+                </Button>
+              </div>
+            </div>
+            <div className="shrink-0 flex justify-center lg:justify-end">
+              <Image
+                src="/hero.svg"
+                alt=""
+                width={744}
+                height={800}
+                className="w-full max-w-sm lg:max-w-md xl:max-w-lg h-auto"
+              />
             </div>
           </div>
         </section>
