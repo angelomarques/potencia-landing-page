@@ -15,7 +15,16 @@ export default function Page() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <span className="font-semibold text-lg">Potencia</span>
+          <a href="#" className="flex items-center gap-2 font-semibold text-lg">
+            <Image
+              src="/logo-no-bg.png"
+              alt=""
+              width={32}
+              height={32}
+              className="h-8 w-auto"
+            />
+            Potencia
+          </a>
           <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
             <a
               href="#servicos"
