@@ -8,14 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Code2,
-  Lightbulb,
-  Package,
-  Mail,
-  Linkedin,
-  Menu,
-} from "lucide-react";
+import { Code2, Lightbulb, Package, Mail, Linkedin, Menu } from "lucide-react";
 
 export default function Page() {
   return (
@@ -23,19 +16,33 @@ export default function Page() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <span className="font-semibold text-lg">Potência</span>
+          <span className="font-semibold text-lg">Potencia</span>
           <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#servicos" className="hover:text-foreground transition-colors">
+            <a
+              href="#servicos"
+              className="hover:text-foreground transition-colors"
+            >
               Serviços
             </a>
-            <a href="#fundador" className="hover:text-foreground transition-colors">
+            <a
+              href="#fundador"
+              className="hover:text-foreground transition-colors"
+            >
               Quem comanda
             </a>
-            <a href="#contato" className="hover:text-foreground transition-colors">
+            <a
+              href="#contato"
+              className="hover:text-foreground transition-colors"
+            >
               Contato
             </a>
           </nav>
-          <Button variant="outline" size="sm" className="md:hidden" aria-label="Menu">
+          <Button
+            variant="outline"
+            size="sm"
+            className="md:hidden"
+            aria-label="Menu"
+          >
             <Menu className="size-4" />
           </Button>
         </div>
@@ -50,9 +57,9 @@ export default function Page() {
               <span className="text-primary">impulsionam</span> seu negócio
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Somos uma empresa brasileira que oferece serviços de desenvolvimento
-              de software, consultoria em tecnologia e criação de produtos digitais
-              sob medida.
+              Somos uma empresa brasileira que oferece serviços de
+              desenvolvimento de software, consultoria em tecnologia e criação
+              de produtos digitais sob medida.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -72,8 +79,8 @@ export default function Page() {
               O que fazemos
             </h2>
             <p className="mt-2 text-muted-foreground max-w-xl">
-              Soluções completas em tecnologia para empresas que querem crescer com
-              qualidade e agilidade.
+              Soluções completas em tecnologia para empresas que querem crescer
+              com qualidade e agilidade.
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               <Card>
@@ -123,15 +130,15 @@ export default function Page() {
               Quem comanda
             </h2>
             <p className="mt-2 text-muted-foreground max-w-xl">
-              Conheça quem está à frente da Potência e traz a visão e a experiência
-              para cada projeto.
+              Conheça quem está à frente da Potencia e traz a visão e a
+              experiência para cada projeto.
             </p>
             <div className="mt-10 flex flex-col md:flex-row gap-10 items-start">
               <div className="shrink-0">
                 <div className="relative size-56 md:size-72 overflow-hidden rounded-2xl bg-muted ring-1 ring-border">
                   <Image
                     src="/owner.png"
-                    alt="Foto do fundador da Potência"
+                    alt="Foto de Ângelo Marques, fundador da Potência"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 768px) 224px, 288px"
@@ -140,16 +147,26 @@ export default function Page() {
                 </div>
               </div>
               <div className="min-w-0">
-                <h3 className="text-xl font-semibold">Fundador da Potência</h3>
+                <h3 className="text-xl font-semibold">Ângelo Marques</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Fundador da Potencia
+                </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Com experiência em software, consultoria e gestão de produtos,
-                  lideramos projetos que unem tecnologia e negócio. Acreditamos em
-                  soluções claras, código de qualidade e parceria de longo prazo
-                  com nossos clientes.
+                  Tenho mais de 4 anos de experiência com desenvolvimento de
+                  software e já atuei em gestão de produtos. Uso inteligência
+                  artificial no dia a dia e também para apoiar os clientes em
+                  seus projetos.
+                </p>
+                <p className="mt-4 text-muted-foreground leading-relaxed">
+                  Já trabalhei em projetos de diversas áreas — financeiro,
+                  recrutamento, fiscal e e-commerce —, o que me permite entender
+                  contextos diferentes e entregar soluções alinhadas ao seu
+                  negócio.
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
                   Se você precisa de um parceiro de tecnologia que entende o seu
-                  contexto e entrega com seriedade, estamos prontos para conversar.
+                  contexto e entrega com seriedade, estamos prontos para
+                  conversar.
                 </p>
               </div>
             </div>
@@ -167,13 +184,18 @@ export default function Page() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild size="lg">
-                <a href="mailto:contato@potencia.com.br">
+                <a href="mailto:angeloemanuelmarques@gmail.com">
                   <Mail className="mr-2 size-4" />
-                  contato@potencia.com.br
+                  angeloemanuelmarques@gmail.com
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <Link
+                  href="https://www.linkedin.com/in/angelo-emanuel-marques-87265a196/"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="LinkedIn"
+                >
                   <Linkedin className="mr-2 size-4" />
                   LinkedIn
                 </Link>
@@ -186,7 +208,7 @@ export default function Page() {
       {/* Footer */}
       <footer className="border-t py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Potência. Todos os direitos reservados.
+          © {new Date().getFullYear()} Potencia. Todos os direitos reservados.
         </div>
       </footer>
     </div>
