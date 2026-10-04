@@ -171,7 +171,7 @@ export default function Page() {
                   Fundador da Potencia
                 </p>
                 <p className="mt-4 text-muted-foreground leading-relaxed">
-                  Tenho mais de 4 anos de experiência com desenvolvimento de
+                  Tenho mais de 5 anos de experiência com desenvolvimento de
                   software e já atuei em gestão de produtos. Uso inteligência
                   artificial no dia a dia e também para apoiar os clientes em
                   seus projetos.
