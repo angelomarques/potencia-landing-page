@@ -13,10 +13,14 @@ test.describe("Site locale by country", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Ângelo offers AI solutions/i,
+        name: /Software, consulting, and products that power your business/i,
       })
     ).toBeVisible();
-    await expect(page.getByText("Software, consulting, and digital products.")).toBeVisible();
+    await expect(
+      page.getByText(
+        "We are a Brazilian company offering software development, technology consulting, bespoke digital product creation, and AI solutions."
+      )
+    ).toBeVisible();
     await expect(page.getByRole("heading", { name: "What we do" })).toBeVisible();
     await expect(page.getByTestId("services-ai-content-link")).toHaveText(
       "AI product photos"
@@ -35,10 +39,14 @@ test.describe("Site locale by country", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Ângelo oferece soluções de IA/i,
+        name: /Software, consultoria e produtos que impulsionam seu negócio/i,
       })
     ).toBeVisible();
-    await expect(page.getByText("Software, consultoria e produtos digitais.")).toBeVisible();
+    await expect(
+      page.getByText(
+        "Somos uma empresa brasileira que oferece serviços de desenvolvimento de software, consultoria em tecnologia, criação de produtos digitais sob medida e soluções de IA."
+      )
+    ).toBeVisible();
     await expect(page.getByRole("heading", { name: "O que fazemos" })).toBeVisible();
     await expect(page.getByTestId("services-ai-content-link")).toHaveText(
       "Fotos de produto com IA"
