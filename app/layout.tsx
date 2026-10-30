@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://potencia.angelomarques.com"),
   title: "Potencia | Serviços de Software, Consultoria e Produtos",
   description:
     "Empresa brasileira de serviços de software, consultoria em tecnologia e desenvolvimento de produtos digitais.",
