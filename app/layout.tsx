@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
+import { resolveCountryCode } from "@/lib/regional/resolve-country";
+import { resolveVisitorPresentation } from "@/lib/regional/visitor-presentation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -16,21 +19,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://potencia.angelomarques.com"),
-  title: "Potencia | Serviços de Software, Consultoria e Produtos",
-  description:
-    "Empresa brasileira de serviços de software, consultoria em tecnologia e desenvolvimento de produtos digitais.",
   icons: {
     icon: "/logo.png",
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headerList = await headers();
+  const countryCode = resolveCountryCode(headerList);
+  const { locale } = resolveVisitorPresentation(countryCode);
+
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang={locale} className={inter.variable}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
