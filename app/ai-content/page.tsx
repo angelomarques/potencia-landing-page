@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { AiContentPageView } from "@/components/ai-content/ai-content-page-view";
 import { aiContentSamples } from "@/lib/ai-content-samples";
 import { getAiContentMessages } from "@/lib/i18n/ai-content-catalog";
-import { resolveCountryCode } from "@/lib/regional/resolve-country";
-import {
-  resolveVisitorPresentation,
-  type AppLocale,
-} from "@/lib/regional/visitor-presentation";
+import { getRequestPresentation } from "@/lib/regional/get-request-presentation";
+import type { AppLocale } from "@/lib/regional/visitor-presentation";
 
 type AiContentPageProps = {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
@@ -21,9 +17,7 @@ export async function generateMetadata({
   searchParams,
 }: AiContentPageProps): Promise<Metadata> {
   const sp = await searchParams;
-  const headerList = await headers();
-  const countryCode = resolveCountryCode(headerList, sp);
-  const presentation = resolveVisitorPresentation(countryCode);
+  const presentation = await getRequestPresentation(sp);
   const messages = getAiContentMessages(presentation.locale);
 
   return {
@@ -58,9 +52,7 @@ export async function generateMetadata({
 
 export default async function AiContentPage({ searchParams }: AiContentPageProps) {
   const sp = await searchParams;
-  const headerList = await headers();
-  const countryCode = resolveCountryCode(headerList, sp);
-  const presentation = resolveVisitorPresentation(countryCode);
+  const presentation = await getRequestPresentation(sp);
   const messages = getAiContentMessages(presentation.locale);
   const year = new Date().getFullYear();
 
