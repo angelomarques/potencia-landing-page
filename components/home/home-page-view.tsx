@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Code2, Lightbulb, Linkedin, Mail, Menu, Package } from "lucide-react";
+import { Code2, Lightbulb, Linkedin, Mail, Menu, Package, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,6 +12,8 @@ import type { HomeMessages } from "@/lib/i18n/home-catalog";
 import type { VisitorPresentation } from "@/lib/regional/visitor-presentation";
 
 const CONTACT_EMAIL = "angeloemanuelmarques@gmail.com";
+
+const SERVICE_ICONS = [Code2, Lightbulb, Package, Sparkles] as const;
 
 type HomePageViewProps = {
   messages: HomeMessages;
@@ -108,50 +110,35 @@ export function HomePageView({
             <p className="mt-2 text-muted-foreground max-w-xl">
               {messages.services.description}
             </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-2">
-                    <Code2 className="size-5" />
-                  </div>
-                  <CardTitle>{messages.services.cards[0].title}</CardTitle>
-                  <CardDescription>
-                    {messages.services.cards[0].description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-2">
-                    <Lightbulb className="size-5" />
-                  </div>
-                  <CardTitle>{messages.services.cards[1].title}</CardTitle>
-                  <CardDescription>
-                    {messages.services.cards[1].description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-2">
-                    <Package className="size-5" />
-                  </div>
-                  <CardTitle>{messages.services.cards[2].title}</CardTitle>
-                  <CardDescription>
-                    {messages.services.cards[2].description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {messages.services.cards.map((card, index) => {
+                const Icon = SERVICE_ICONS[index];
+                const buttonLabel =
+                  "buttonLabel" in card ? card.buttonLabel : undefined;
+
+                return (
+                  <Card key={card.title}>
+                    <CardHeader>
+                      <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary mb-2">
+                        <Icon className="size-5" />
+                      </div>
+                      <CardTitle>{card.title}</CardTitle>
+                      <CardDescription>{card.description}</CardDescription>
+                      {buttonLabel ? (
+                        <Button asChild variant="outline" size="sm" className="mt-4 w-fit">
+                          <Link
+                            href="/ai-content"
+                            data-testid="services-ai-content-link"
+                          >
+                            {buttonLabel}
+                          </Link>
+                        </Button>
+                      ) : null}
+                    </CardHeader>
+                  </Card>
+                );
+              })}
             </div>
-            <p className="mt-10 max-w-xl text-sm text-muted-foreground">
-              <Link
-                href="/ai-content"
-                className="hover:text-foreground transition-colors"
-                data-testid="services-ai-content-link"
-              >
-                {messages.footer.aiContentLink}
-              </Link>
-            </p>
           </div>
         </section>
 

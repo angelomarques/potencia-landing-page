@@ -26,6 +26,7 @@ export type HomeMessages = {
       { title: string; description: string },
       { title: string; description: string },
       { title: string; description: string },
+      { title: string; description: string; buttonLabel: string },
     ];
   };
   founder: {
@@ -86,6 +87,12 @@ const ptBR: HomeMessages = {
         title: "Produtos de software",
         description:
           "Construção de produtos digitais próprios, do conceito ao lançamento, com foco em resultado e escalabilidade.",
+      },
+      {
+        title: "Fotos de produto com IA",
+        description:
+          "Imagens de lifestyle e catálogo para e-commerce, geradas com IA e ajustadas à identidade da sua marca.",
+        buttonLabel: "Conhecer serviço",
       },
     ],
   },
@@ -152,6 +159,12 @@ const en: HomeMessages = {
         title: "Software products",
         description:
           "Building our own digital products from concept to launch, focused on outcomes and scale.",
+      },
+      {
+        title: "AI product photos",
+        description:
+          "Lifestyle and catalog imagery for e-commerce, generated with AI and tuned to your brand.",
+        buttonLabel: "View service",
       },
     ],
   },
