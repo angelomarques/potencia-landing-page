@@ -143,6 +143,15 @@ export function HomePageView({
                 </CardHeader>
               </Card>
             </div>
+            <p className="mt-10 max-w-xl text-sm text-muted-foreground">
+              <Link
+                href="/ai-content"
+                className="hover:text-foreground transition-colors"
+                data-testid="services-ai-content-link"
+              >
+                {messages.footer.aiContentLink}
+              </Link>
+            </p>
           </div>
         </section>
 

@@ -17,6 +17,13 @@ test.describe("Site locale by country", () => {
       })
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: "What we do" })).toBeVisible();
+    await expect(page.getByTestId("services-ai-content-link")).toHaveText(
+      "AI product photos"
+    );
+    await expect(page.getByTestId("services-ai-content-link")).toHaveAttribute(
+      "href",
+      "/ai-content"
+    );
   });
 
   test("homepage Brazil visitor sees Brazilian Portuguese", async ({ page }) => {
@@ -31,6 +38,13 @@ test.describe("Site locale by country", () => {
       })
     ).toBeVisible();
     await expect(page.getByRole("heading", { name: "O que fazemos" })).toBeVisible();
+    await expect(page.getByTestId("services-ai-content-link")).toHaveText(
+      "Fotos de produto com IA"
+    );
+    await expect(page.getByTestId("services-ai-content-link")).toHaveAttribute(
+      "href",
+      "/ai-content"
+    );
   });
 });
 
