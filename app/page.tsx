@@ -226,8 +226,19 @@ export default function Page() {
 
       {/* Footer */}
       <footer className="border-t py-6">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Potencia. Todos os direitos reservados.
+        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <span>
+            © {new Date().getFullYear()} Potencia. Todos os direitos reservados.
+          </span>
+          <span className="hidden sm:inline" aria-hidden="true">
+            ·
+          </span>
+          <Link
+            href="/ai-content"
+            className="hover:text-foreground transition-colors"
+          >
+            Fotos de produto com IA
+          </Link>
         </div>
       </footer>
     </div>
