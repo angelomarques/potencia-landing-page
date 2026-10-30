@@ -13,9 +13,10 @@ test.describe("Site locale by country", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Software, consulting, and products that power your business/i,
+        name: /Ângelo offers AI solutions/i,
       })
     ).toBeVisible();
+    await expect(page.getByText("Software, consulting, and digital products.")).toBeVisible();
     await expect(page.getByRole("heading", { name: "What we do" })).toBeVisible();
     await expect(page.getByTestId("services-ai-content-link")).toHaveText(
       "AI product photos"
@@ -34,9 +35,10 @@ test.describe("Site locale by country", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: /Software, consultoria e produtos que impulsionam seu negócio/i,
+        name: /Ângelo oferece soluções de IA/i,
       })
     ).toBeVisible();
+    await expect(page.getByText("Software, consultoria e produtos digitais.")).toBeVisible();
     await expect(page.getByRole("heading", { name: "O que fazemos" })).toBeVisible();
     await expect(page.getByTestId("services-ai-content-link")).toHaveText(
       "Fotos de produto com IA"
@@ -150,6 +152,15 @@ test.describe("PR evidence screenshots", () => {
     await page.getByRole("heading", { level: 1 }).scrollIntoViewIfNeeded();
     await page.screenshot({
       path: "docs/pr-evidence/i18n-regional-pricing/home-br-pt.png",
+      fullPage: false,
+    });
+  });
+
+  test("capture homepage hero AI solutions copy", async ({ page }) => {
+    await page.goto("/?potencia-country=US");
+    await page.getByRole("heading", { level: 1 }).scrollIntoViewIfNeeded();
+    await page.screenshot({
+      path: "docs/pr-evidence/hero-ai-solutions/home-us-en.png",
       fullPage: false,
     });
   });
